@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Explorer</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">TravelExplorer</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#destinations">Destinations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#packages">Packages</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+                <button id="darkToggle" class="btn btn-dark ms-3">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="home" class="hero">
+        <div class="overlay">
+            <div class="container text-center text-white">
+                <h1 class="display-4 fw-bold">Explore The World</h1>
+                <p class="lead">Discover beautiful places with us</p>
+                <input type="text" id="searchInput"
+                    class="form-control w-50 mx-auto mt-3"
+                    placeholder="Search destination...">
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinations -->
+    <section id="destinations" class="py-5">
+        <div class="container">
+            <h2 class="text-center">Popular Destinations</h2>
+            <div class="row mt-4" id="destinationContainer"></div>
+        </div>
+    </section>
+
+    <!-- Packages -->
+    <section id="packages" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center">Tour Packages</h2>
+
+            <div class="text-end mt-3">
+                <select id="priceFilter" class="form-select w-25 d-inline">
+                    <option value="all">All</option>
+                    <option value="low">Below $1000</option>
+                    <option value="high">Above $1000</option>
+                </select>
+            </div>
+
+            <div class="row mt-4" id="packageContainer"></div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="py-5">
+        <div class="container">
+            <h2 class="text-center">Travel Gallery</h2>
+            <div class="row g-3 mt-4">
+                <div class="col-md-3"><img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=800&q=80" class="img-fluid rounded shadow"></div>
+                <div class="col-md-3"><img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=800&q=80" class="img-fluid rounded shadow"></div>
+                <div class="col-md-3"><img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=800&q=80" class="img-fluid rounded shadow"></div>
+                <div class="col-md-3"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80" class="img-fluid rounded shadow"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center">Book Your Trip</h2>
+            <form id="bookingForm" class="w-50 mx-auto mt-4">
+                <input type="text" class="form-control mb-3" placeholder="Full Name" required>
+                <input type="email" class="form-control mb-3" placeholder="Email" required>
+                <input type="date" class="form-control mb-3" required>
+                <button class="btn btn-primary w-100">Book Now</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="text-center">Contact Us</h2>
+            <form id="contactForm" class="w-50 mx-auto mt-4">
+                <input type="text" class="form-control mb-3" placeholder="Name" required>
+                <input type="email" class="form-control mb-3" placeholder="Email" required>
+                <textarea class="form-control mb-3" placeholder="Message" required></textarea>
+                <button class="btn btn-success w-100">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="text-center">
+        <p>© 2026 TravelExplorer | All Rights Reserved</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
