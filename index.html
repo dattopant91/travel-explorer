@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <title>Travel Explorer</title> -->
      <title>Travel Explorer | Explore The World</title>
-    <link rel="icon" type="image/png" href="fevicon.png">
+    <!-- <link rel="icon" type="image/png" href="favicon.png"> -->
+     <link rel="icon" type="image/png" href="favicon.png?v=2">
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -18,12 +19,13 @@
 
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand fw-bold" href="#">TravelExplorer</a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -35,35 +37,35 @@
                     <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
-                <button id="darkToggle" class="btn btn-dark ms-3">🌙</button>
+                <button id="darkToggle" class="btn btn-outline-light ms-3">🌙</button>
             </div>
         </div>
     </nav>
 
-    <!-- Hero -->
+    <!-- HERO -->
     <section id="home" class="hero">
-        <div class="overlay">
-            <div class="container text-center text-white">
-                <h1 class="display-4 fw-bold">Explore The World</h1>
-                <p class="lead">Discover beautiful places with us</p>
-                <input type="text" id="searchInput" class="form-control w-50 mx-auto mt-3"
-                    placeholder="Search destination...">
-            </div>
+        <div class="hero-content text-center text-white">
+            <h1 class="display-3 fw-bold">Explore The World</h1>
+            <p class="lead">Discover beautiful places with premium travel experiences</p>
+
+            <input type="text" id="searchInput"
+                class="form-control search-box mx-auto mt-4"
+                placeholder="Search destination...">
         </div>
     </section>
 
-    <!-- Destinations -->
-    <section id="destinations" class="py-5">
+    <!-- DESTINATIONS -->
+    <section id="destinations" class="py-5 fade-section">
         <div class="container">
-            <h2 class="text-center">Popular Destinations</h2>
+            <h2 class="text-center section-title">Popular Destinations</h2>
             <div class="row mt-4" id="destinationContainer"></div>
         </div>
     </section>
 
-    <!-- Packages -->
-    <section id="packages" class="py-5 bg-light">
+    <!-- PACKAGES -->
+    <section id="packages" class="py-5 bg-light fade-section">
         <div class="container">
-            <h2 class="text-center">Tour Packages</h2>
+            <h2 class="text-center section-title">Tour Packages</h2>
 
             <div class="text-end mt-3">
                 <select id="priceFilter" class="form-select w-25 d-inline">
@@ -77,49 +79,33 @@
         </div>
     </section>
 
-    <!-- Gallery -->
-    <section id="gallery" class="py-5">
+    <!-- GALLERY -->
+    <section id="gallery" class="py-5 fade-section">
         <div class="container">
-            <h2 class="text-center">Travel Gallery</h2>
-            <div class="row g-3 mt-4">
-                <div class="col-md-3"><img
-                        src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=800&q=80"
-                        class="img-fluid rounded shadow"></div>
-                <div class="col-md-3"><img
-                        src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=800&q=80"
-                        class="img-fluid rounded shadow"></div>
-                <div class="col-md-3"><img
-                        src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=800&q=80"
-                        class="img-fluid rounded shadow"></div>
-                <div class="col-md-3"><img
-                        src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80"
-                        class="img-fluid rounded shadow"></div>
+            <h2 class="text-center section-title">Travel Gallery</h2>
+            <div class="row g-4 mt-4">
+                <div class="col-md-3"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" class="gallery-img"></div>
+                <div class="col-md-3"><img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=90" class="gallery-img"></div>
+                <div class="col-md-3"><img src="https://images.unsplash.com/photo-1473625247510-8ceb1760943f?auto=format&fit=crop&w=800&q=80" class="gallery-img"></div>
+                <!-- <div class="col-md-3"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80" class="gallery-img"></div> -->
+                 <div class="col-md-3">
+    <img src="https://images.unsplash.com/photo-1707343848552-893e05dba6ac?q=80&w=2070&auto=format&fit=crop"
+         class="gallery-img"
+         alt="Mountain view">
+</div>
             </div>
         </div>
     </section>
 
-    <!-- Booking -->
-    <section class="py-5 bg-light">
+    <!-- CONTACT -->
+    <section id="contact" class="py-5 bg-light fade-section">
         <div class="container">
-            <h2 class="text-center">Book Your Trip</h2>
-            <form id="bookingForm" class="w-50 mx-auto mt-4">
-                <input type="text" class="form-control mb-3" placeholder="Full Name" required>
-                <input type="email" class="form-control mb-3" placeholder="Email" required>
-                <input type="date" class="form-control mb-3" required>
-                <button class="btn btn-primary w-100">Book Now</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="py-5">
-        <div class="container">
-            <h2 class="text-center">Contact Us</h2>
+            <h2 class="text-center section-title">Contact Us</h2>
             <form id="contactForm" class="w-50 mx-auto mt-4">
                 <input type="text" class="form-control mb-3" placeholder="Name" required>
                 <input type="email" class="form-control mb-3" placeholder="Email" required>
                 <textarea class="form-control mb-3" placeholder="Message" required></textarea>
-                <button class="btn btn-success w-100">Send Message</button>
+                <button class="btn btn-primary w-100">Send Message</button>
             </form>
         </div>
     </section>

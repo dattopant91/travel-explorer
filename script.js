@@ -64,39 +64,22 @@ document.getElementById("searchInput").addEventListener("keyup", e => {
     });
 });
 
-document.getElementById("bookingForm").addEventListener("submit", e => {
-    e.preventDefault();
-    alert("Booking Successful!");
-});
-
-document.getElementById("contactForm").addEventListener("submit", e => {
-    e.preventDefault();
-    alert("Message Sent!");
-});
-
-/* DARK MODE */
-const darkBtn = document.getElementById("darkToggle");
-
-if (localStorage.getItem("theme") === "dark") {
-    document.body.classList.add("dark-mode");
-    darkBtn.innerHTML = "☀️";
-}
-
-darkBtn.addEventListener("click", () => {
+document.getElementById("darkToggle").addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
-
-    if (document.body.classList.contains("dark-mode")) {
-        localStorage.setItem("theme", "dark");
-        darkBtn.innerHTML = "☀️";
-    } else {
-        localStorage.setItem("theme", "light");
-        darkBtn.innerHTML = "🌙";
-    }
 });
 
-loadDestinations();
-loadPackages();
-// Navbar scroll effect
+const sections = document.querySelectorAll(".fade-section");
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }
+    });
+});
+
+sections.forEach(section => observer.observe(section));
+
 window.addEventListener("scroll", () => {
     const navbar = document.querySelector(".navbar");
     if (window.scrollY > 50) {
@@ -105,3 +88,6 @@ window.addEventListener("scroll", () => {
         navbar.classList.remove("scrolled");
     }
 });
+
+loadDestinations();
+loadPackages();
